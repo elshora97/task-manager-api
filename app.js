@@ -5,12 +5,10 @@ const connectDB = require("./db/connect.js");
 require("dotenv").config();
 
 //middleware
+app.use(express.static("./public"));
 app.use(express.json());
 
 //routes
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
 
 app.use("/api/v1/tasks", tasks);
 
